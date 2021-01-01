@@ -91,12 +91,12 @@ public class PurchaseOrderController {
         if (purchaseOrder.getId() == null) {
             if (purchaseOrderService.lastPurchaseOrder() == null) {
                 //need to generate new one
-                purchaseOrder.setCode("SSPO" + makeAutoGenerateNumberService.numberAutoGen(null).toString());
+                purchaseOrder.setCode("SBPO" + makeAutoGenerateNumberService.numberAutoGen(null).toString());
             } else {
 
                 //if there is customer in db need to get that customer's code and increase its value
                 String previousCode = purchaseOrderService.lastPurchaseOrder().getCode().substring(4);
-                purchaseOrder.setCode("SSPO" + makeAutoGenerateNumberService.numberAutoGen(previousCode).toString());
+                purchaseOrder.setCode("SBPO" + makeAutoGenerateNumberService.numberAutoGen(previousCode).toString());
             }
         }
         List<PurchaseOrderItem> purchaseOrderItemList = new ArrayList<>();
