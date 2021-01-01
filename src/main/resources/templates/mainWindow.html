@@ -32,7 +32,7 @@
         <section class="statistic statistic2">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-3" data-sec-authorize="hasAnyAuthority('ROLE_MANAGER','ROLE_ADMIN')">
                         <div class="statistic__item" style="background-color: #0d4b8e">
                             <span class="desc" style="font-size:23px; color: whitesmoke">Employee</span>
                             <div class="Emp">
@@ -43,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-3" data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_STOCK_KEEPER')">
                         <div class="statistic__item" style="background-color: #4272d7d1">
 
                             <span class="desc" style="font-size:23px; color: whitesmoke">Item</span>
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-3" data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_CASHIER')">
                         <div class="statistic__item" style="background-color: #1f2a42">
                             <span class="desc" style="font-size:23px; color: whitesmoke">Customer</span>
                             <div class="cust">
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-3" data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_STOCK_KEEPER')">
                         <div class="statistic__item" style="background-color: #70899e">
                             <span class="desc" style="font-size:23px; color: whitesmoke">Supplier</span>
                             <div class="sup">
@@ -78,7 +78,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-3" data-sec-authorize="hasAnyAuthority('ROLE_MANAGER','ROLE_STOCK_KEEPER')">
                         <div class="statistic__item" style="background-color: #2f4471">
                             <span class="desc" style="font-size:23px; color: whitesmoke">Purchase Order</span>
                             <div class="pordr">
@@ -90,7 +90,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-3" data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_CASHIER')">
                         <div class="statistic__item" style="background-color: #051373">
                             <span class="desc" style="font-size:23px; color: whitesmoke">Invoice</span>
                             <div class="invoice">
