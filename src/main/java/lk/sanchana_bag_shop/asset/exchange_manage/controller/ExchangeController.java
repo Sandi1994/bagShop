@@ -69,9 +69,11 @@ public class ExchangeController {
       if ( invoiceLedger.getLiveDead().equals(LiveDead.STOP) ) {
         ExchangeInvoiceLedger exchangeInvoiceLedger = new ExchangeInvoiceLedger();
         InvoiceLedger invoiceLedgerDb = invoiceLedgerService.findById(invoiceLedger.getId());
+
         exchangeInvoiceLedger.setInvoiceLedger(invoiceLedgerDb);
         exchangeInvoiceLedger.setCount(Integer.parseInt(invoiceLedger.getQuantity()));
         exchangeInvoiceLedgerService.persist(exchangeInvoiceLedger);
+
         int counter = Integer.parseInt(invoiceLedgerDb.getQuantity()) - Integer.parseInt(invoiceLedger.getQuantity());
         invoiceLedgerDb.setQuantity(String.valueOf(counter));
         invoiceLedgerService.persist(invoiceLedgerDb);

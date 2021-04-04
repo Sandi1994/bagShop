@@ -28,11 +28,6 @@
               <a class="btn btn-primary" href="/invoice/add" ><span
                     class="glyphicon glyphicon-list-alt" ></span >&nbsp; New Invoice</a >
             </div >
-            <div class="alert alert-warning col-sm-8" role="alert" >
-              <strong >Following table show details belongs to there month. if you need to more please
-                       search
-                       using above method</strong >
-            </div >
           </div >
         </div >
         <!--List all invoice-->
@@ -77,22 +72,22 @@
 
 <script >
 
-    // $("#startDate, #endDate").bind('keyup',
-    //     function () {
-    //         let manufactureDate = $(`#startDate`).val();
-    //         let expiredDate = $(`#endDate`).val();
-    //
-    //         if (manufactureDate !== "" && expiredDate !== "") {
-    //             if (Date.parse(manufactureDate) > Date.parse(expiredDate)) {
-    //                 swal({
-    //                     title: "Could you accept those days.. !",
-    //                     icon: "warning",
-    //                     text: "Please check your date \n Expire Date can not be less than Manufacture Date",
-    //                 })
-    //                 $(`#endDate`).val($(`#startDate`).val());
-    //             }
-    //         }
-    //     });
+    $("#startDate, #endDate").bind('keyup',
+        function () {
+            let manufactureDate = $(`#startDate`).val();
+            let expiredDate = $(`#endDate`).val();
+
+            if (manufactureDate !== "" && expiredDate !== "") {
+                if (Date.parse(manufactureDate) > Date.parse(expiredDate)) {
+                    swal({
+                        title: "Could you accept those days.. !",
+                        icon: "warning",
+                        text: "Please check your date \n Expire Date can not be less than Manufacture Date",
+                    })
+                    $(`#endDate`).val($(`#startDate`).val());
+                }
+            }
+        });
 
 
 </script >

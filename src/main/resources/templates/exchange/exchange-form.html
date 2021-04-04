@@ -43,7 +43,7 @@
                       <div class="custom-control custom-checkbox custom-control-inline "
                            data-th-each="invoiceLedgerStatus,rowIndex : ${invoiceLedgerStatuses}" >
                         <input class="custom-control-input gender" required
-                               data-th-name="${'invoiceLedgers[__${index.index}__].id'}"
+                               data-th-name="${'invoiceLedgers[__${index.index}__].liveDead'}"
                                data-th-value="${invoiceLedgerStatus}"
                                data-th-id="${rowIndex.count}+${'ld'+index.index}" type="radio"
                                data-th-checked="${invoiceLedgerStatus==invoiceLedger.liveDead}" />
@@ -54,7 +54,9 @@
                       </div >
                     </th >
                     <th >
-                      <input type="number" step="1" min="0" data-th-id="${'rc'+index.index}"
+                      <input hidden type="text" required
+                             data-th-name="${'invoiceLedgers[__${index.index}__].id'}" data-th-value="${invoiceLedger.id}"/>
+                      <input type="number" step="1" min="0" data-th-id="${'rc'+index.index}" data-th-name="${'invoiceLedgers[__${index.index}__].quantity'}"
                              class="form-control rcNumber" />
                     </th >
                   </tr >
