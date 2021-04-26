@@ -7,7 +7,6 @@ import lk.sanchana_bag_shop.asset.common_asset.model.enums.LiveDead;
 import lk.sanchana_bag_shop.asset.item.entity.Item;
 import lk.sanchana_bag_shop.asset.item.entity.enums.ItemStatus;
 import lk.sanchana_bag_shop.asset.item.entity.enums.MainCategory;
-import lk.sanchana_bag_shop.asset.item.entity.enums.WarrantyPeriod;
 import lk.sanchana_bag_shop.asset.item.service.ItemService;
 import lk.sanchana_bag_shop.asset.item_color.service.ItemColorService;
 import lk.sanchana_bag_shop.util.interfaces.AbstractController;
@@ -46,7 +45,6 @@ public class ItemController implements AbstractController< Item, Integer > {
     model.addAttribute("statuses", ItemStatus.values());
     model.addAttribute("item", item);
     model.addAttribute("itemColors", itemColorService.findAll());
-    model.addAttribute("warrantyPeriod", WarrantyPeriod.values());
     model.addAttribute("brands",brandService.findAll() );
     model.addAttribute("addStatus", addState);
     model.addAttribute("mainCategories", MainCategory.values());

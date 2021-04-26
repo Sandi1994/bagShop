@@ -73,65 +73,65 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-//    http.csrf().disable();
-//    http.authorizeRequests().antMatchers("/").permitAll();
+    http.csrf().disable();
+    http.authorizeRequests().antMatchers("/").permitAll();
     
     // For developing easy to give permission all lin
 // {"ADMIN","PROCUREMENT_MANAGER","CASHIER","MANAGER","HR_MANAGER","ACCOUNT_MANAGER"}
 
-   http.authorizeRequests(
-        authorizeRequests ->
-            authorizeRequests
-
-                .antMatchers("/category/**").hasAnyRole("CASHIER","MANAGER")
-                .antMatchers("/discountRatio/**").hasAnyRole("MANAGER")
-                .antMatchers("/employee/**").hasAnyRole("MANAGER","ADMIN")
-                .antMatchers("/goodReceivedNote/**").hasAnyRole("MANAGER","STOCK_KEEPER")
-                .antMatchers("/payment/**").hasAnyRole("MANAGER","ACCOUNT_MANAGER")
-                .antMatchers("/purchaseOrder/**").hasAnyRole("MANAGER")
-                .antMatchers("/role/**").hasAnyRole("MANAGER" , "ADMIN")
-                .antMatchers("/supplier/**").hasAnyRole("MANAGER")
-                .antMatchers("/supplierItem/**").hasAnyRole("MANAGER")
-                .antMatchers("/user/**").hasAnyRole("MANAGER","ADMIN")
-                    .antMatchers("/exchange/**").hasAnyRole("MANAGER","CASHIER")
-                .anyRequest()
-                .authenticated())
-        // Login form
-        .formLogin(
-            formLogin ->
-                formLogin
-                    .loginPage("/login")
-                    .loginProcessingUrl("/login")
-                    //Username and password for validation
-                    .usernameParameter("username")
-                    .passwordParameter("password")
-                    .successHandler(customAuthenticationSuccessHandler())
-                    .failureUrl("/login?error")
-                  )
-        //Logout controlling
-        .logout(
-            logout ->
-                logout
-                    .logoutUrl("/logout")
-                    .logoutSuccessHandler(customLogoutSuccessHandler())
-                    .deleteCookies("JSESSIONID")
-                    .invalidateHttpSession(true)
-                    .clearAuthentication(true))
-        //session management
-        .sessionManagement(
-            sessionManagement ->
-                sessionManagement
-                    .sessionFixation().migrateSession()
-                    .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
-                    .invalidSessionUrl("/login")
-                    .maximumSessions(6)
-                    .expiredUrl("/logout")
-                    .sessionRegistry(sessionRegistry()))
-        //Cross site disable
-        .csrf(AbstractHttpConfigurer::disable)
-        .exceptionHandling().and()
-        .headers()
-        .addHeaderWriter(new XFrameOptionsHeaderWriter(XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN));
+//   http.authorizeRequests(
+//        authorizeRequests ->
+//            authorizeRequests
+//                    .antMatchers(ALL_PERMIT_URL).permitAll()
+//                .antMatchers("/category/**").hasAnyRole("ADMIN", "CASHIER","MANAGER")
+//                .antMatchers("/discountRatio/**").hasAnyRole("MANAGER")
+//                .antMatchers("/employee/**").hasAnyRole("MANAGER","ADMIN")
+//                .antMatchers("/goodReceivedNote/**").hasAnyRole("MANAGER","STOCK_KEEPER")
+//                .antMatchers("/payment/**").hasAnyRole("MANAGER","ACCOUNT_MANAGER")
+//                .antMatchers("/purchaseOrder/**").hasAnyRole("MANAGER")
+//                .antMatchers("/role/**").hasAnyRole("MANAGER" , "ADMIN")
+//                .antMatchers("/supplier/**").hasAnyRole("MANAGER")
+//                .antMatchers("/supplierItem/**").hasAnyRole("MANAGER")
+//                .antMatchers("/user/**").hasAnyRole("MANAGER","ADMIN")
+//                    .antMatchers("/exchange/**").hasAnyRole("MANAGER","CASHIER")
+//                .anyRequest()
+//                .authenticated())
+//        // Login form
+//        .formLogin(
+//            formLogin ->
+//                formLogin
+//                    .loginPage("/login")
+//                    .loginProcessingUrl("/login")
+//                    //Username and password for validation
+//                    .usernameParameter("username")
+//                    .passwordParameter("password")
+//                    .successHandler(customAuthenticationSuccessHandler())
+//                    .failureUrl("/login?error")
+//                  )
+//        //Logout controlling
+//        .logout(
+//            logout ->
+//                logout
+//                    .logoutUrl("/logout")
+//                    .logoutSuccessHandler(customLogoutSuccessHandler())
+//                    .deleteCookies("JSESSIONID")
+//                    .invalidateHttpSession(true)
+//                    .clearAuthentication(true))
+//        //session management
+//        .sessionManagement(
+//            sessionManagement ->
+//                sessionManagement
+//                    .sessionFixation().migrateSession()
+//                    .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+//                    .invalidSessionUrl("/login")
+//                    .maximumSessions(6)
+//                    .expiredUrl("/logout")
+//                    .sessionRegistry(sessionRegistry()))
+//        //Cross site disable
+//        .csrf(AbstractHttpConfigurer::disable)
+//        .exceptionHandling().and()
+//        .headers()
+//        .addHeaderWriter(new XFrameOptionsHeaderWriter(XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN));
 
  }
 }

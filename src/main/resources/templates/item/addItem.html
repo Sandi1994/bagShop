@@ -10,17 +10,21 @@
       <!--Form Content-->
       <div class="container-fluid  " >
         <div class="col-sm-12 flex-column " >
+          <br>
+          <br>
           <form id="form" class="form-horizontal" data-th-action="${addStatus==true?'/item/save':'/item/update'}"
                 data-th-object="${item}" method="POST" enctype="multipart/form-data" >
             <div class="row" >
               <div class="container-fluid " >
-                <div class="row text-center   " >
-                  <!--View list Button-->
+                <div class="row text-center">
+
+                  <!--Home Button-->
                   <div class="col" >
-                    <a href="/item" class="btn btn-success" tabindex="1" >
-                      <i class="fa fa-list" style="font-size: 20px" ></i >&nbsp; View List
+                    <a class="btn btn-dark" href="/home" tabindex="2" >
+                      <i class="fa fa-home" style="font-size: 20px" ></i >&nbsp;Home
                     </a >
                   </div >
+
                   <!--Form Name-->
                   <div class="col" >
                     <h2 class="text-light text-center" >
@@ -29,12 +33,13 @@
                       </strong >
                     </h2 >
                   </div >
-                  <!--Home Button-->
+                  <!--View list Button-->
                   <div class="col" >
-                    <a class="btn btn-success" href="/home" tabindex="2" >
-                      <i class="fa fa-home" style="font-size: 20px" ></i >&nbsp;Home
+                    <a href="/item" class="btn btn-dark" tabindex="1" >
+                      <i class="fa fa-list" style="font-size: 20px" ></i >&nbsp; View List
                     </a >
                   </div >
+
                 </div >
               </div >
 
@@ -111,23 +116,7 @@
                       </option >
                     </select >
                   </div >
-                </div ><!--Warranty Period-->
-                <div class="form-row text-right">
-                  <div class="col-md-4">
-                    <label class="control-label" for="warrantyPeriod">Warranty Period :</label>
-                  </div>
-                  <div class="col-md-4">
-                    <select id="warrantyPeriod" class="form-control" tabindex="4"
-                            required>
-                      <option value="" disabled>Please select</option>
-                      <option  data-th-each="warrantyPeriod : ${warrantyPeriod}"
-                               data-th-text="${warrantyPeriod.warrantyPeriod}"
-                               data-th-value="${warrantyPeriod}"
-                      >
-                      </option>
-                    </select>
-                  </div>
-                </div>
+                </div >
                 <!--Name-->
                 <div class="form-row text-right" >
                   <div class="col-md-4" >
