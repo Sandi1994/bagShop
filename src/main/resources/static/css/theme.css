@@ -15,6 +15,20 @@ body{
     background-image: linear-gradient(to right, rgb(112,128,144), rgb(176,196,222), rgb(176,196,222) , rgb(112,128,144) );
 }
 
+.navbar-dark .navbar-brand {
+    color: #0a0a0a;
+}
+
+.text-primary {
+    color: #0a0a0a !important;
+}
+
+a {
+    color: #01101d;
+    text-decoration: none;
+    background-color: transparent;
+}
+
 /*button,*/
 /*input[type='button'] {*/
 /*    cursor: pointer;*/
