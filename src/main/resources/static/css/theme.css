@@ -16,15 +16,15 @@ body{
 }
 
 .navbar-dark .navbar-brand {
-    color: #0a0a0a;
+    color: #021932;
 }
 
 .text-primary {
-    color: #0a0a0a !important;
+    color: #021932 !important;
 }
 
 a {
-    color: #01101d;
+    color: #021932;
     text-decoration: none;
     background-color: transparent;
 }
