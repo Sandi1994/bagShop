@@ -30,11 +30,11 @@
           <br>
           <div class="row text-center" >
             <div class="col" >
-              <h4 class="text-light text-center" >
+              <h2 class="text-dark text-center" >
                 <strong >
                   <span data-th-text="${addStatus==true?'New Employee':'Update Employee Details'}" ></span >
                 </strong >
-              </h4 >
+              </h2 >
               <br>
             </div >
           </div >
@@ -98,7 +98,7 @@
             </div >
             <div class="col-md-8" >
               <input id="callingName" data-th-field="*{callingName}" class="form-control" tabindex="5"
-                     type="text" minlength="5" />
+                     type="text" minlength="4" />
               <span class="error" data-th-errors="*{callingName}"
                     data-th-if="${#fields.hasErrors('callingName')}" id="callingNameError" >Error Calling Name</span >
             </div >

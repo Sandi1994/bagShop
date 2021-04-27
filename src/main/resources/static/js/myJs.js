@@ -290,11 +290,11 @@ $("#callingName").bind("keyup", function () {
 
 //colour change function --start
 let backgroundColourChangeGood = function (id) {
-    $(id).css('background-color', '#00FFFF');
+    $(id).css('background-color', '#82de7a');
 };
 
 let backgroundColourChangeBad = function (id) {
-    $(id).css('background-color', '#FF00AA');
+    $(id).css('background-color', '#e93a3a');
 };
 
 let backgroundColourChangeNothingToChange = function (id) {
