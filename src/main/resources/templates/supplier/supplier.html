@@ -8,36 +8,43 @@
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}" ></nav >
 
       <!--heading Area-->
-      <div class="container-fluid " >
-        <div class="row formManagement" >
-          <div class="col-md-3" >
-            <!--New Supplier Button-->
-            <div class="col" >
-              <a class="btn btn-success" href="/supplier/add" id="button1" tabindex="1" >
-                <i class="fa fa-plus" ></i > Add New</a >&nbsp;
-            </div >
-          </div >
+<div class="container-fluid ">
+  <div class="row text-center   ">
 
-          <!--List Name-->
-          <div class="col" >
-            <h2 class="text-white text-center" >
-              <strong >
-                Supplier List
-              </strong >
-            </h2 >
-          </div >
-          <!--Home Button-->
-          <div class="col" >
-            <a href="/home" id="searchShow" class="btn btn-primary" tabindex="2" >
-              <i class="fas fa-home" ></i >Home
-            </a >
-          </div >
+    <div class="col">
+      <br>
+      <br>
+      <a class="btn btn-dark" href="/home" >
+        <i class="fa fa-home" style="font-size: 18px;"></i> &nbsp; Home
+      </a >
+    </div>
 
-        </div >
-      </div >
+
+    <div class="col">
+      <br>
+      <br>
+      <h2 class="text-dark text-center">
+        <strong>
+          Supplier List
+        </strong>
+      </h2>
+    </div>
+
+    <!--New Supplier Button-->
+    <div class="col" >
+      <br>
+      <br>
+      <a class="btn btn-dark" href="/supplier/add" id="button1" tabindex="1" >
+        <i class="fa fa-plus" ></i > Add New</a >&nbsp;
+    </div >
+
+  </div>
+
 
       <div class="container-fluid formBorder text-center" >
         <div class="col" >
+          <br>
+          <br>
           <!--Supplier List Table-->
           <div class="col" id="supplierListPresent" data-th-fragment="supplierFragment"
                data-th-if="${not #lists.isEmpty(suppliers)}" >

@@ -7,38 +7,47 @@
 <body class="sb-nav-fixed" >
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}" ></nav >
 
-
-<nav data-th-replace="~{fragments/navBar :: navBarFragment}"></nav>
 <!--Heading Area -->
 <!--Multi CSS-->
             <link data-th-href="@{/css/multi.css}" media="all" rel="stylesheet" type="text/css"/>
 <div class="container-fluid ">
     <div class="row text-center   ">
-        <!--View List Button-->
+
+        <!--Home Button-->
         <div class="col">
-            <a class="btn btn-primary" href="/purchaseOrder">
-                <i class="fa fa-list" style="font-size: 20px"></i>&nbsp;&nbsp;View List
+            <br>
+            <br>
+            <a class="btn btn-dark" href="/home">
+                <i class="fa fa-home" style="font-size: 20px"></i> &nbsp;&nbsp;Home
             </a>
         </div>
+
         <!--Form Name-->
         <div class="col">
-            <h2 class="text-white text-center">
+            <br>
+            <br>
+            <h2 class="text-dark text-center">
                 <strong>
                     Purchase Order Management
                 </strong>
             </h2>
         </div>
-        <!--Home Button-->
+
+        <!--View List Button-->
         <div class="col">
-            <a class="btn btn-primary" href="/home">
-                <i class="fa fa-home" style="font-size: 20px"></i> &nbsp;&nbsp;Home
+            <br>
+            <br>
+            <a class="btn btn-dark" href="/purchaseOrder">
+                <i class="fa fa-list" style="font-size: 20px"></i>&nbsp;&nbsp;View List
             </a>
         </div>
+
     </div>
 </div>
 
 <!--Form Content - start -->
 <div class="container-fluid bg-info">
+    <br>
     <!--Supplier Search - Start-->
     <div class="offset-1 flex-column"  data-th-if="${searchAreaShow==true}">
         <form class="form-inline" data-th-action="${'/purchaseOrder/find'}" data-th-object="${purchaseOrder}"
@@ -176,7 +185,7 @@
        id="purchaseOrderItemUrl" type="text">
 <!--Supplier Item add - end-->
 <div data-th-replace="~{fragments/footer :: footerFragment}"></div>
-<div data-th-replace="~{fragments/footer <div data-th-replace="~{fragments/script :: scriptFragment}"></div>:: footerFragment}"></div>
+<div data-th-replace="~{fragments/script :: scriptFragment}"></div>
 <script>
     //when change supplier search criteria that value set search value input
     $(document).ready(function () {
