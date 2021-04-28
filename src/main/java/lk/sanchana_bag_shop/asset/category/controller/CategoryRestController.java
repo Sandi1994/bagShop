@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -28,24 +29,32 @@ public class CategoryRestController {
     @GetMapping(value = "/getCategory/{mainCategory}")
     public MappingJacksonValue getCategoryByMainCategory(@PathVariable String mainCategory) {
         Category category = new Category();
+
         category.setMainCategory(MainCategory.valueOf(mainCategory));
 
         //MappingJacksonValue
-        List<Category> categories = categoryService.search(category);
+        List<Category> categories = new ArrayList<>();;
+        categoryService.search(category).forEach(x->{
+            x.setBrands(categoryService.findById(x.getId()).getBrands());
+            categories.add(x);
+        });
+
         //Create new mapping jackson value and set it to which was need to filter
         MappingJacksonValue mappingJacksonValue = new MappingJacksonValue(categories);
 
-        //simpleBeanPropertyFilter :-  need to give any id to addFilter method and created filter which was mentioned
-        // what parameter's necessary to provide
-        SimpleBeanPropertyFilter simpleBeanPropertyFilter = SimpleBeanPropertyFilter
-                .filterOutAllExcept("id", "name");
-        //filters :-  set front end required value to before filter
+        SimpleBeanPropertyFilter simpleBeanPropertyFilterCategory = SimpleBeanPropertyFilter
+            .filterOutAllExcept("id", "name","brands");
 
-        FilterProvider filters = new SimpleFilterProvider()
-                .addFilter("Category", simpleBeanPropertyFilter);
-        //Employee :- need to annotate relevant class with JsonFilter  {@JsonFilter("Employee") }
-        mappingJacksonValue.setFilters(filters);
+        SimpleBeanPropertyFilter simpleBeanPropertyFilterBrand = SimpleBeanPropertyFilter
+            .filterOutAllExcept("id", "name");
 
+
+
+        FilterProvider fitter = new SimpleFilterProvider()
+            .addFilter("Category", simpleBeanPropertyFilterCategory)
+            .addFilter("Brand", simpleBeanPropertyFilterBrand);
+
+        mappingJacksonValue.setFilters(fitter);
         return mappingJacksonValue;
     }
 }
