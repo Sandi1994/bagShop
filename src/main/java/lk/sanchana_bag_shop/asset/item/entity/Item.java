@@ -52,7 +52,7 @@ public class Item extends AuditEntity {
     @ManyToOne
     private Category category;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Brand brand;
 
     @ManyToOne

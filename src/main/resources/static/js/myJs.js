@@ -517,4 +517,3 @@ let btnSearchEmployeeShow = function () {
         $("#btnSearchEmployee").css('display', 'none');
     }
 };
-
