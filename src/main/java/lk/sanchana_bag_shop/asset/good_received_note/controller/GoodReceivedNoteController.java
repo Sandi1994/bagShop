@@ -2,8 +2,9 @@ package lk.sanchana_bag_shop.asset.good_received_note.controller;
 
 import lk.sanchana_bag_shop.asset.common_asset.model.enums.LiveDead;
 import lk.sanchana_bag_shop.asset.good_received_note.entity.GoodReceivedNote;
-import lk.sanchana_bag_shop.asset.good_received_note.entity.enums.GoodReceivedNoteState;
 import lk.sanchana_bag_shop.asset.good_received_note.service.GoodReceivedNoteService;
+import lk.sanchana_bag_shop.asset.item.entity.Item;
+import lk.sanchana_bag_shop.asset.item.service.ItemService;
 import lk.sanchana_bag_shop.asset.ledger.entity.Ledger;
 import lk.sanchana_bag_shop.asset.ledger.service.LedgerService;
 import lk.sanchana_bag_shop.asset.purchase_order.entity.PurchaseOrder;
@@ -16,8 +17,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 @RequestMapping("/goodReceivedNote")
@@ -25,12 +24,15 @@ public class GoodReceivedNoteController {
     private final GoodReceivedNoteService goodReceivedNoteService;
     private final PurchaseOrderService purchaseOrderService;
     private final LedgerService ledgerService;
+    private final ItemService itemService;
 
     public GoodReceivedNoteController(GoodReceivedNoteService goodReceivedNoteService,
-                                      PurchaseOrderService purchaseOrderService, LedgerService ledgerService) {
+                                      PurchaseOrderService purchaseOrderService, LedgerService ledgerService,
+                                      ItemService itemService) {
         this.goodReceivedNoteService = goodReceivedNoteService;
         this.purchaseOrderService = purchaseOrderService;
         this.ledgerService = ledgerService;
+        this.itemService = itemService;
     }
 
 
