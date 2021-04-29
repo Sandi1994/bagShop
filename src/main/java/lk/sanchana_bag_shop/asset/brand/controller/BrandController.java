@@ -18,7 +18,7 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/brand")
-public class BrandController {
+public class    BrandController {
     private final BrandService brandService;
 
     @Autowired

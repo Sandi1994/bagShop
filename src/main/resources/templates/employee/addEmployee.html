@@ -116,6 +116,7 @@
                     data-th-if="${#fields.hasErrors('nic')}" >Error NIC Number</span >
             </div >
           </div >
+
           <!--Gender-->
           <div class="form-row text-right" >
             <div class="col-md-4" >
@@ -136,6 +137,7 @@
               </div >
             </div >
           </div >
+
           <!--Date of birth-->
           <div class="form-row text-right" >
             <div class="col-md-4" >
@@ -291,7 +293,7 @@
             </div >
           </div >
           <!--Employee status-->
-          <div class="form-row text-right" >
+          <div class="form-row text-right" data-th-if="${addStatus==false}" >
             <div class="col-md-4" >
               <label class="control-label" for="employeeStatus" >Employee Status :</label >
             </div >

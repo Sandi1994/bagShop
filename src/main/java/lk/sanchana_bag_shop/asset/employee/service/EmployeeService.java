@@ -5,6 +5,7 @@ package lk.sanchana_bag_shop.asset.employee.service;
 import lk.sanchana_bag_shop.asset.common_asset.model.enums.LiveDead;
 import lk.sanchana_bag_shop.asset.employee.dao.EmployeeDao;
 import lk.sanchana_bag_shop.asset.employee.entity.Employee;
+import lk.sanchana_bag_shop.asset.employee.entity.enums.EmployeeStatus;
 import lk.sanchana_bag_shop.util.interfaces.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.*;
@@ -45,13 +46,15 @@ public class EmployeeService implements AbstractService<Employee, Integer > {
     @Transactional
     public Employee persist(Employee employee) {
         if(employee.getId()==null){
-            employee.setLiveDead(LiveDead.ACTIVE);}
+            employee.setLiveDead(LiveDead.ACTIVE);
+            employee.setEmployeeStatus(EmployeeStatus.WORKING);}
         return employeeDao.save(employee);
     }
 
     public boolean delete(Integer id) {
         Employee employee =  employeeDao.getOne(id);
         employee.setLiveDead(LiveDead.STOP);
+
         employeeDao.save(employee);
         return false;
     }
