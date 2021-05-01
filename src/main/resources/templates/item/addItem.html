@@ -54,15 +54,6 @@
               <input type="text" data-th-field="*{liveDead}" hidden >
             </div >
           </div >
-          <div  data-th-if="${addStatus==false}" class="form-row text-right" >
-            <div class="col-md-4" >
-              <label class="control-label" for="id" >ID :</label >
-            </div >
-            <div class="col-md-4" >
-              <input id="id" data-th-field="*{id}" class="form-control" type="text" readonly />
-              <input type="text" data-th-field="*{liveDead}" hidden >
-            </div >
-          </div >
           <!--Main Category -->
           <div class="form-row text-right" >
             <div class="col-md-4" >
@@ -74,9 +65,9 @@
                 <option value="" disabled >Please select</option >
                 <option data-th-each="mainCategory : ${mainCategories}"
                         data-th-text="${mainCategory.mainCategory}"
-                        data-th-value="${mainCategory}"
-                >
-                </option >
+                        data-th-value="${mainCategory}" ></option >
+                <option data-th-if="${addStatus==false}" data-th-text="${item.category.mainCategory.mainCategory}"
+                        data-th-value="${item.category.mainCategory}" ></option >
               </select >
             </div >
           </div >
@@ -89,6 +80,8 @@
               <select id="subCategory" data-th-name="${'category'}" class="form-control" tabindex="4"
                       style="font-size: large" required >
                 <option value="" disabled >Please select</option >
+                <option data-th-if="${addStatus==false}" data-th-text="${item.category.name}"
+                        data-th-value="${item.category.id}" ></option >
               </select >
             </div >
           </div >
@@ -103,9 +96,7 @@
                       required >
                 <option value="" >Please select</option >
                 <option data-th-if="${addStatus==false}" data-th-text="${item.brand.name}"
-                        data-th-value="${item.brand.id}"
-                >
-                </option >
+                        data-th-value="${item.brand.id}" ></option >
               </select >
             </div >
           </div >
@@ -134,7 +125,7 @@
             </div >
             <div class="col-md-4" >
               <input id="name" data-th-field="*{name}" class="form-control" tabindex="6" type="text"
-                     required readonly/>
+                     required readonly />
               <span id="nameError" data-th-errors="*{name}"
                     data-th-if="${#fields.hasErrors('name')}" class="error" >Error Name</span >
             </div >
@@ -225,10 +216,10 @@
 <script >
     $(document).ready(function () {
         let mainCategoryValueBind = $("#mainCategoryValueBind").val();
-        if (mainCategoryValueBind) {
-            $("#mainCategory").val(mainCategoryValueBind);
-            getSubCategory(mainCategoryValueBind);
-        }
+        // if (mainCategoryValueBind) {
+        //     $("#mainCategory").val(mainCategoryValueBind);
+        //     getSubCategory(mainCategoryValueBind);
+        // }
     });
     $("#mainCategory").bind("change", function () {
         getSubCategory(this.value);
