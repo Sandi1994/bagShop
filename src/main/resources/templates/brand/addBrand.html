@@ -8,9 +8,12 @@
 <nav th:replace="~{fragments/navBar :: navBarFragment}"></nav>
 <!--Heading Area-->
 <div class="container-fluid  ">
+    <div class="row text-center   ">
 
     <!--Home Button-->
     <div class="col">
+        <br>
+        <br>
         <a class="btn btn-dark" href="/home" tabindex="2">
             <i class="fa fa-home" style="font-size: 20px"></i> &nbsp;&nbsp;Home
         </a>
@@ -18,6 +21,8 @@
 
         <!--Form Name-->
         <div class="col">
+            <br>
+            <br>
             <h2 class="text-light text-center">
                 <strong>
                     <span  data-th-text="${addStatus==true?'Add New Brand':'Update Brand Details'}"></span>
@@ -26,9 +31,11 @@
         </div>
 
 
-    <div class="row text-center   ">
+
         <!--ViewList Button-->
         <div class="col">
+            <br>
+            <br>
             <a href="/brand" class="btn btn-dark" tabindex="1">
                 <i class="fa fa-list" style="font-size: 20px"></i>&nbsp;&nbsp;View List
             </a>
@@ -61,11 +68,11 @@
                                 <select id="mainCategory" data-th-value="${addStatus==false?'brand.category.mainCategory':''}" class="form-control"
                                         tabindex="4" style="font-size: large"
                                         required >
-                                    <option value="" disabled >Please select</option >
+                                    <option value="">Please select</option >
                                     <option data-th-each="mainCategory : ${mainCategories}"
                                             data-th-text="${mainCategory.mainCategory}"
-                                            data-th-value="${mainCategory}"
-                                    >
+                                            data-th-value="${mainCategory}">
+
                                     </option >
                                 </select >
                             </div >
@@ -79,7 +86,7 @@
                                 <select id="subCategory" data-th-name="${'category'}" class="form-control" tabindex="4"
                                         style="font-size: large" required >
                                     <option value="" disabled >Please select</option >
-                                    <option data-th-value="${addStatus==false?'brand.category.id':''}" data-th-text="${addStatus==false?'brand.category.name':''}" ></option >
+                                    <option th:if="${addStatus==false}" data-th-value="${brand.category.id}" data-th-text="${brand.category.name}" ></option >
                                 </select >
                             </div >
                         </div >
