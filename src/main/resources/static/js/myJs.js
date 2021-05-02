@@ -370,7 +370,7 @@ $("#startDate, #endDate").bind('change',
 
 
 
-//If there is any need to clean filled data in table to clean plz use this mwthod
+//If there is any need to clean filled data in table to clean plz use this method
 
 //delete all row before show objects in table
 let deleteAllTableRow = function (tableName) {

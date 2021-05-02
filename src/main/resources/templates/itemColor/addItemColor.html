@@ -9,31 +9,41 @@
 <!--Heading Area-->
 <div class="container-fluid  ">
     <div class="row text-center   ">
-        <!--ViewList Button-->
+
+        <!--Home Button-->
         <div class="col">
-            <a href="/itemColor" class="btn btn-primary" tabindex="1">
-                <i class="fa fa-list" style="font-size: 20px"></i>&nbsp;&nbsp;View List
+            <br>
+            <br>
+            <a class="btn btn-dark" href="/home" tabindex="2">
+                <i class="fa fa-home" style="font-size: 20px"></i> &nbsp;&nbsp;Home
             </a>
         </div>
         <!--Form Name-->
         <div class="col">
-            <h2 class="text-light text-center">
+            <br>
+            <br>
+            <h2 class="text-dark text-center">
                 <strong>
                     <span  data-th-text="${addStatus==true?'Add New Item Color':'Update Item Color Details'}"></span>
                 </strong>
             </h2>
         </div>
-        <!--Home Button-->
+
+
+        <!--ViewList Button-->
         <div class="col">
-            <a class="btn btn-primary" href="/home" tabindex="2">
-                <i class="fa fa-home" style="font-size: 20px"></i> &nbsp;&nbsp;Home
+            <br>
+            <br>
+            <a href="/itemColor" class="btn btn-dark" tabindex="1">
+                <i class="fa fa-list" style="font-size: 20px"></i>&nbsp;&nbsp;View List
             </a>
         </div>
     </div>
 </div>
 <!--Form Content-->
-<div class="container-fluid bg-dark formBorder">
+<div class="container-fluid formBorder">
     <div class="col-sm-12 flex-column ">
+        <br>
         <form id="form" class="form-horizontal" th:action="${addStatus==true?'/itemColor/save':'/itemColor/update'}"
               th:object="${itemColor}" method="POST" enctype="multipart/form-data">
             <div class="row">
