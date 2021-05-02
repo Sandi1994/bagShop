@@ -11,24 +11,31 @@
       <!--Heading Area -->
       <div class="container-fluid " >
         <div class="row text-center   " >
-          <!--View List Button-->
+          <!--Home Button-->
           <div class="col" >
-            <a href="/supplier" class="btn btn-primary" >
-              <i class="fa fa-list" style="font-size: 20px" ></i >&nbsp;&nbsp;View List
+            <br>
+            <br>
+            <a class="btn btn-dark" href="/home" >
+              <i class="fa fa-home" style="font-size: 20px" ></i > &nbsp;&nbsp;Home
             </a >
           </div >
           <!--Form Name-->
           <div class="col" >
-            <h2 class="text-white text-center" >
+            <br>
+            <br>
+            <h2 class="text-dark text-center" >
               <strong >
                 Supplier Item Management
               </strong >
             </h2 >
           </div >
-          <!--Home Button-->
+
+          <!--View List Button-->
           <div class="col" >
-            <a class="btn btn-primary" href="/home" >
-              <i class="fa fa-home" style="font-size: 20px" ></i > &nbsp;&nbsp;Home
+            <br>
+            <br>
+            <a href="/supplier" class="btn btn-dark" >
+              <i class="fa fa-list" style="font-size: 20px" ></i >&nbsp;&nbsp;View List
             </a >
           </div >
         </div >
@@ -38,6 +45,8 @@
       <div class="container-fluid " >
         <!--Supplier Search - Start-->
         <div class="offset-1 flex-column" data-th-if="${searchAreaShow==true}" >
+          <br>
+          <br>
           <form id="form" class="form-inline" data-th-action="${'/supplierItem/find'}"
                 data-th-object="${supplierDetail}" method="POST" >
             <div class="form-row" >
