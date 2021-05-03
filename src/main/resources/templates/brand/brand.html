@@ -51,6 +51,8 @@
                 <tr>
                     <th> Index</th>
                     <th> Name</th>
+                    <th>Category</th>
+                    <th>Main Category</th>
                     <th> Modify</th>
                 </tr>
                 </thead>
@@ -58,6 +60,8 @@
                 <tr  data-th-each="brand, rowCount : ${brands}">
                     <th  data-th-text="${rowCount.count}"></th>
                     <th  data-th-text="${brand.name}"></th>
+                    <th  data-th-text="${brand.category.name}"></th>
+                    <th  data-th-text="${brand.category.mainCategory.mainCategory}"></th>
                     <th>
                         <a id="brandEdit" th:href="${'/brand/edit/' + brand.id}" class="btn btn-primary btn-sm"><i
                                 class="fa fa-edit" style="font-size: 15px"></i>&nbsp;Edit</a>
