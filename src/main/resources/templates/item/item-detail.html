@@ -10,31 +10,41 @@
       <!--heading Area-->
       <div class="container-fluid " >
         <div class="row text-center   " >
-          <!--View List Button-->
+
+          <!--Home Button-->
           <div class="col" >
-            <a href="/item" class="btn btn-primary" tabindex="2" >
-              <i class="fa fa-list" style="font-size: 20px" ></i >&nbsp; View List
+            <br>
+            <br>
+            <a class="btn btn-dark" href="/home" tabindex="1" >
+              <i class="fa fa-home" style="font-size: 20px" ></i > &nbsp; Home
             </a >
           </div >
           <!--Item Name-->
           <div class="col" >
-            <h2 class="text-white text-center" >
+            <br>
+            <br>
+            <h2 class="text-dark text-center" >
               <strong >
-                <p data-th-text="${itemDetail.name}" ></p >
+                <p data-th-text="${itemDetail.name}" style="font-size: 20px"></p >
               </strong >
             </h2 >
           </div >
-          <!--Home Button-->
+
+          <!--View List Button-->
           <div class="col" >
-            <a class="btn btn-primary" href="/home" tabindex="1" >
-              <i class="fa fa-home" style="font-size: 20px" ></i > &nbsp; Home
+            <br>
+            <br>
+            <a href="/item" class="btn btn-dark" tabindex="2" >
+              <i class="fa fa-list" style="font-size: 20px" ></i >&nbsp; View List
             </a >
           </div >
         </div >
       </div >
       <!--details-->
       <div data-th-fragment="itemDetailsFragment" class="container-fluid  " >
-        <div class="col-sm-12 flex-column " >
+        <div class="col-sm-12 flex-column" >
+          <br>
+          <br>
           <div class="row" >
             <!--Left Side-->
             <div class="form-group col-md-6 col-sm-6 text-left flex-column" >
@@ -43,7 +53,7 @@
                 <div class="col-md-4" >
                   <label class="control-label" for="id" >ID :</label >
                 </div >
-                <div class="col-md-8" >
+                <div class="col-md-4" >
                   <p id="id" data-th-text="${itemDetail.id}" class="display_detail" ></p >
                 </div >
               </div >
@@ -52,7 +62,7 @@
                 <div class="col-md-4" >
                   <label class="control-label" for="mainCategory" >Main Category :</label >
                 </div >
-                <div class="col-md-8" >
+                <div class="col-md-4" >
                   <p id="mainCategory" data-th-text="${itemDetail.category.mainCategory.mainCategory}"
                      class="display_detail" ></p >
                 </div >
@@ -62,7 +72,7 @@
                 <div class="col-md-4" >
                   <label class="control-label" for="subCategory" >Main Category :</label >
                 </div >
-                <div class="col-md-8" >
+                <div class="col-md-4" >
                   <p id="subCategory" data-th-text="${itemDetail.category.name}"
                      class="display_detail" ></p >
                 </div >
@@ -72,7 +82,7 @@
                 <div class="col-md-4" >
                   <label class="control-label" for="brand" >Brand :</label >
                 </div >
-                <div class="col-md-8" >
+                <div class="col-md-4" >
                   <p id="brand" data-th-text="${itemDetail.brand.name}"
                      class="display_detail" ></p >
                 </div >
@@ -83,7 +93,7 @@
                 <div class="col-md-4" >
                   <label class="control-label" for="itemColor" >Item Color :</label >
                 </div >
-                <div class="col-md-8" >
+                <div class="col-md-4" >
                   <p id="itemColor" data-th-text="${itemDetail.itemColor.name}"
                      class="display_detail" ></p >
                 </div >
@@ -93,7 +103,7 @@
                 <div class="col-md-4" >
                   <label class="control-label" for="name" >Name :</label >
                 </div >
-                <div class="col-md-8" >
+                <div class="col-md-6" >
                   <p id="name" data-th-text="${itemDetail.name}"
                      class="display_detail" ></p >
                 </div >
@@ -103,7 +113,7 @@
                 <div class="col-md-4" >
                   <label class="control-label" for="rop" >ROP :</label >
                 </div >
-                <div class="col-md-8" >
+                <div class="col-md-4" >
                   <p id="rop" data-th-text="${itemDetail.rop}"
                      class="display_detail" ></p >
                 </div >
@@ -116,7 +126,7 @@
                 <div class="col-md-4" >
                   <label class="control-label" for="createdBy" >Created By :</label >
                 </div >
-                <div class="col-md-8" >
+                <div class="col-md-4" >
                   <p id="createdBy" data-th-text="${itemDetail.createdBy}" class="display_detail" ></p >
                 </div >
               </div >
@@ -125,7 +135,7 @@
                 <div class="col-md-4" >
                   <label class="control-label" for="createdAt" >Created At :</label >
                 </div >
-                <div class="col-md-8" >
+                <div class="col-md-4" >
                   <p id="createdAt" data-th-text="${#temporals.format(itemDetail.createdAt, 'dd-MM-yyyy HH:mm')}"
                      class="display_detail" ></p >
                 </div >
@@ -135,7 +145,7 @@
                 <div class="col-md-4" >
                   <label class="control-label" for="updatedBy" >Updated By :</label >
                 </div >
-                <div class="col-md-8" >
+                <div class="col-md-4" >
                   <p id="updatedBy" data-th-text="${itemDetail.updatedBy}" class="display_detail" ></p >
                 </div >
               </div >
@@ -144,7 +154,7 @@
                 <div class="col-md-4" >
                   <label class="control-label" for="updatedAt" >Updated At :</label >
                 </div >
-                <div class="col-md-8" >
+                <div class="col-md-4" >
                   <p id="updatedAt" data-th-text="${#temporals.format(itemDetail.updatedAt, 'dd-MM-yyyy HH:mm')}"
                      class="display_detail" ></p >
                 </div >
@@ -153,7 +163,7 @@
             <!--Back Button-->
             <div class="form-group col-md-12 col-sm-12 text-center flex-column " >
               <a href="/item" >
-                <button class="btn btn-dark" type="button" tabindex="3" >
+                <button class="btn btn-primary" type="button" tabindex="3" >
                   <i class="fas fa-arrow-circle-left" style="font-size: 20px" ></i >&nbsp; &nbsp;Back
                 </button >
               </a >
