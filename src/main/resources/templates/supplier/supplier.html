@@ -11,13 +11,13 @@
 <div class="container-fluid ">
   <div class="row text-center   ">
 
-    <div class="col">
+    <!--New Supplier Button-->
+    <div class="col" >
       <br>
       <br>
-      <a class="btn btn-dark" href="/home" >
-        <i class="fa fa-home" style="font-size: 18px;"></i> &nbsp; Home
-      </a >
-    </div>
+      <a class="btn btn-dark" href="/supplier/add" id="button1" tabindex="1" >
+        <i class="fa fa-plus" ></i > Add New</a >&nbsp;
+    </div >
 
 
     <div class="col">
@@ -30,13 +30,15 @@
       </h2>
     </div>
 
-    <!--New Supplier Button-->
-    <div class="col" >
+
+
+    <div class="col">
       <br>
       <br>
-      <a class="btn btn-dark" href="/supplier/add" id="button1" tabindex="1" >
-        <i class="fa fa-plus" ></i > Add New</a >&nbsp;
-    </div >
+      <a class="btn btn-dark" href="/home" >
+        <i class="fa fa-home" style="font-size: 18px;"></i> &nbsp; Home
+      </a >
+    </div>
 
   </div>
 
@@ -77,7 +79,9 @@
                         class="fa fa-folder-open" style="font-size: 15px" ></i >Purchase Order</a >
                   <a class="btn btn-primary btn-sm" data-th-href="${'/supplier/' + supplier.id}" ><i
                         class="fa fa-folder-open" style="font-size: 15px" ></i >&nbsp;View</a >
-                  <a class="btn btn-success btn-sm" data-th-href="${'/supplier/edit/' + supplier.id}" ><i
+                  <br>
+                  <br>
+                  <a class="btn btn-warning btn-sm" data-th-href="${'/supplier/edit/' + supplier.id}" ><i
                         class="fa fa-edit" style="font-size: 15px" ></i >&nbsp;Edit</a >
                   <a class="btn btn-danger btn-sm" data-th-if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}" data-th-href="${'/supplier/delete/' + supplier.id}" >
                   <i
