@@ -13,13 +13,16 @@
   <div class="row text-center   " >
     <!-- New Item Button-->
     <div class="col" >
-      <a class="btn btn-success" href="/supplier" tabindex="1" ><i class="fas fa-plus"
-                                                                   style="font-size: 20px" ></i >&nbsp;&nbsp;Supplier
-                                                                                                 Lis</a >&nbsp;
+      <br>
+      <br>
+      <a class="btn btn-dark" href="/supplier" tabindex="1" ><i class="fas fa-plus"
+                                                                   style="font-size: 20px" ></i >&nbsp;&nbsp;Supplier List</a >&nbsp;
     </div >
     <!-- List Name-->
     <div class="col" >
-      <h2 class="text-white text-center" >
+      <br>
+      <br>
+      <h2 class="text-dark text-center" >
         <strong >
           <span data-th-text="${title}" ></span >
         </strong >
@@ -27,7 +30,9 @@
     </div >
     <!-- Home Button-->
     <div class="col" >
-      <a href="/home" id="searchShow" class="btn btn-primary" tabindex="2" >
+      <br>
+      <br>
+      <a href="/home" id="searchShow" class="btn btn-dark" tabindex="2" >
         <!--<i class="fa fa-user " style="font-size: 20px"></i>&nbsp;Add&nbsp;-->
         <i class="fas fa-home" style="font-size: 20px" ></i >&nbsp;&nbsp;Home
         &nbsp;
@@ -40,8 +45,10 @@
 
   <div class="row" >
     <div class="col-3" >
+      <br>
+      <br>
       <a href="/ledger/reorderPoint" >
-        <button class="btn btn-primary" >Re Order Point Achieved</button >
+        <button class="btn btn-warning" >Re Order Point Achieved</button >
       </a >
     </div >
   </div >
@@ -67,7 +74,7 @@
             <th data-th-text="${ledger.item.rop}" ></th >
             <th data-th-text="${ledger.quantity}" ></th >
             <th data-th-text="${ledger.sellPrice}" ></th >
-              <a data-th-href="${'/purchaseOrder/supplier/' + ledger.goodReceivedNote.purchaseOrder.supplier.id}"
+             <th> <a data-th-href="${'/purchaseOrder/supplier/' + ledger.goodReceivedNote.purchaseOrder.supplier.id}"
                  class="btn btn-primary btn-sm" ><i
                     class="fa fa-folder-open" style="font-size: 15px" ></i >Purchase Order</a >
             </th >

@@ -90,7 +90,7 @@ public  class CustomerController implements AbstractController<Customer, Integer
                 emailService.sendEmail(customer.getEmail(), "Welcome Message", "Welcome to Sanchana Bag Shop...");
             }
             if (customer.getMobile() != null) {
-                //    twilioMessageService.sendSMS(customer.getMobile(), "Welcome to Sanchana Bag Shop");
+//                    twilioMessageService.sendSMS(customer.getMobile(), "Welcome to Sanchana Bag Shop");
             }
         }
 

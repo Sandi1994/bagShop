@@ -7,6 +7,7 @@ import lk.sanchana_bag_shop.asset.common_asset.model.enums.LiveDead;
 import lk.sanchana_bag_shop.asset.customer.entity.Customer;
 import lk.sanchana_bag_shop.asset.discount_ratio.entity.DiscountRatio;
 import lk.sanchana_bag_shop.asset.invoice.entity.enums.InvoicePrintOrNot;
+import lk.sanchana_bag_shop.asset.invoice.entity.enums.InvoiceState;
 import lk.sanchana_bag_shop.asset.invoice.entity.enums.InvoiceValidOrNot;
 import lk.sanchana_bag_shop.asset.invoice.entity.enums.PaymentMethod;
 import lk.sanchana_bag_shop.asset.invoice_ledger.entity.InvoiceLedger;
@@ -59,6 +60,9 @@ public class Invoice extends AuditEntity {
 
     @Enumerated(EnumType.STRING)
     private InvoiceValidOrNot invoiceValidOrNot;
+
+//    @Enumerated(EnumType.STRING)
+//    private InvoiceState invoiceState;
 
     @Enumerated(EnumType.STRING)
     private LiveDead liveDead;

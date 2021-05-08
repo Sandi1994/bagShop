@@ -7,8 +7,8 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum InvoiceState {
-    PAID("Paid"),
-    CANCELLED("Cancelled");
+    ACTIVE("Active"),
+    STOP("Stop");
 
     private final String invoiceState;
 }
