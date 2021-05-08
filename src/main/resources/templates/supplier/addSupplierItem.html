@@ -75,11 +75,14 @@
         <!--Supplier Item add- start-->
         <div class="col-12 flex-column" data-th-if="${supplierDetailShow==false}" >
           <br>
-          <a href="#hrefCollapse" class="btn btn-primary col-12" data-toggle="collapse" aria-expanded="false"
-             aria-controls="hrefCollapse" style="color: antiquewhite; background-color: slategray; border-color: slategrey;" ><b>Show Supplier Details</b></a >
-        <div class="collapse" id="hrefCollapse" >
-            <br>
-            <br>
+          <br>
+          <a href="#hrefCollapse" class="btn float-right col-3" data-toggle="collapse" aria-expanded="false"
+             aria-controls="hrefCollapse" style="color: antiquewhite; background-color: #2b79ba; border-color: #336796;" ><b>Show Supplier Details</b></a >
+          <br>
+          <br>
+          <br>
+          <div class="collapse" id="hrefCollapse" >
+
             <section data-th-replace="~{supplier/supplier-detail :: supplierDetailsFragment}" ></section >
           </div >
           <!--Supplier Item add Form - start-->
@@ -100,11 +103,13 @@
               </div >
             </div >
 
+            <br>
+            <br>
+
             <div class="form-row col-md-12 col-sm-12 mt-4 text-center" >
-              <br>
-              <br>
+
               <!--Add new Item-->
-              <div th:class="${supplierItemEdit==true?'container-fluid':'col-md-6'}" >
+              <div data-th-class="${supplierItemEdit==true?'container-fluid':'col-md-6'}" >
                 <table class="table table-striped table-inverse" id="selectedItemInTable" >
                   <legend ><strong > <i >Selected Items </i ></strong ></legend >
                   <thead class="thead-inverse" >
