@@ -23,7 +23,6 @@
                   <tr >
                     <th >Index</th >
                     <th >Item Name</th >
-                    <th >Ex Date</th >
                     <th >Quantity</th >
                     <th >Unit Price</th >
                     <th >Line Total</th >
@@ -35,7 +34,6 @@
                   <tr data-th-each="invoiceLedger, index : ${invoiceDetail.invoiceLedgers}" >
                     <td data-th-text="${index.count}" ></td >
                     <td data-th-text="${invoiceLedger.ledger.item.name}" ></td >
-                    <td data-th-text="${invoiceLedger.ledger.expiredDate}" ></td >
                     <td data-th-text="${invoiceLedger.quantity}" ></td >
                     <td data-th-text="${invoiceLedger.sellPrice}" ></td >
                     <td class="lineTotal" data-th-text="${invoiceLedger.lineTotal}" ></td >
@@ -49,7 +47,7 @@
                                data-th-checked="${invoiceLedgerStatus==invoiceLedger.liveDead}" />
                         <label class="custom-control-label"
                                data-th-for="${'ld'+index.index}+${invoiceLedgerStatus}+${rowIndex}"
-                               data-th-text="${invoiceLedgerStatus.liveDead}" > radio
+                               data-th-text="${invoiceLedgerStatus.liveDeath}" > radio
                         </label >
                       </div >
                     </th >
@@ -224,6 +222,8 @@
         )
         $("#total").val(total);
     });
+
+
 </script >
 </body >
 </html >

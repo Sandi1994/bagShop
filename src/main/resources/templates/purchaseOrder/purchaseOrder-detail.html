@@ -11,30 +11,44 @@
       <!--heading Area-->
       <div class="container-fluid " >
         <div class="row text-center   " >
+          <!--Home Button-->
+          <div class="col" >
+            <br>
+            <br>
+            <a class="btn btn-dark" href="/home" tabindex="1" >
+              <i class="fa fa-home" style="font-size: 20px" ></i > &nbsp; Home
+            </a >
+          </div >
+
+
+          <!--Item Name-->
+          <div class="col" >
+            <br>
+            <br>
+            <p class="h2 text-dark font-weight-bold" style="font-size: 30px"
+               data-th-text="${purchaseOrderDetail.supplier.name +' - '+purchaseOrderDetail.code }" ></p >
+          </div >
+
+
           <!--View List Button-->
           <div class="col" >
+            <br>
+            <br>
             <a href="/item" class="btn btn-dark" tabindex="2" >
               <i class="fa fa-list" style="font-size: 20px" ></i >&nbsp; View List
             </a >
           </div >
-          <!--Item Name-->
-          <div class="col" >
-            <p class="h2 text-white font-weight-bold"
-               data-th-text="${purchaseOrderDetail.supplier.name +' - '+purchaseOrderDetail.code }" ></p >
-          </div >
-          <!--Home Button-->
-          <div class="col" >
-            <a class="btn btn-primary" href="/home" tabindex="1" >
-              <i class="fa fa-home" style="font-size: 20px" ></i > &nbsp; Home
-            </a >
-          </div >
         </div >
       </div >
+<br>
+<br>
       <!--details-->
-      <div data-th-fragment="purchaseOrderDetailsFragment" class="container-fluid  " id="purchaseOrder" >
-        <div class="col-sm-12 flex-column " >
+      <div data-th-fragment="purchaseOrderDetailsFragment" class="container-fluid  " id="purchaseOrder"  >
+        <div class="col-sm-12 flex-column " style="background-color: rgba(255, 255, 255, 0.2); color: navy; font-size : 17px;border-radius: 30px; width: 1300px; height: 500px;" >
           <div class="row" >
             <div class="form-group col-md-12 col-sm-12 text-center flex-column " id="supplierDetail" >
+              <br>
+              <br>
               <div class="row " >
                 <!--Left Side-->
                 <div class="form-group col-md-6 col-sm-6 text-left flex-column" >
@@ -176,6 +190,9 @@
           </div >
         </div >
       </div >
+<br>
+<br>
+<br>
       <!--Payment History -->
       <div class="form-group col-md-12 col-sm-12 text-center flex-column"
            data-th-if="${ #lists.isEmpty(purchaseOrderDetail.payments)}" >
@@ -225,12 +242,13 @@
       <!--Back Button-->
       <div class="form-group col-md-12 col-sm-12 text-center flex-column " >
         <a href="/purchaseOrder" >
+          <br>
           <button class="btn btn-dark" type="button" tabindex="3" >
             <i class="fas fa-arrow-circle-left" style="font-size: 20px" ></i >&nbsp; &nbsp;Back
           </button >
         </a >
-        <button class="btn btn-success" type="button" id="btnPrintResult" >
-          <i class="fa fa-save" style="font-size: 20px" ></i > Print
+        <button class="btn btn-warning" type="button" id="btnPrintResult" >
+          <i class="fa fa-print" style="font-size: 20px" ></i > Print
         </button >
       </div >
 <div data-th-replace="~{fragments/footer :: footerFragment}" ></div >

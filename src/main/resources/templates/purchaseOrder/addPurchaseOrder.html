@@ -76,9 +76,10 @@
     </div>
     <!--Supplier List Show - end-->
     <!--Supplier Item add- start-->
+    <br>
     <div class="col-12 flex-column"  data-th-if="${supplierDetailShow==false}">
-        <a aria-controls="hrefCollapse" aria-expanded="false" class="btn btn-primary col-12" data-toggle="collapse"
-           href="#hrefCollapse">Show Supplier Details</a>
+        <a aria-controls="hrefCollapse" aria-expanded="false" class="btn float-right col-3" data-toggle="collapse"
+           href="#hrefCollapse" style="color: antiquewhite; background-color: #2b79ba; border-color: #336796;">Show Supplier Details</a>
         <div class="collapse" id="hrefCollapse">
             <section data-th-replace="~{supplier/supplier-detail :: supplierDetailsFragment}"></section>
         </div>
@@ -87,7 +88,7 @@
             <input data-th-name="${'supplier'}" data-th-value="${supplierDetail.id}" id="supplier" type="hidden">
             <div class="form-row col-md-6"  data-th-if="${purchaseOrderItemEdit==false}">
                 <div class="col-md-4">
-                    <label class="control-label" for="item">Select Items:</label>
+                    <label class="control-label" for="item"><b>Select Items:</b></label>
                 </div>
                 <div class="text-left col-md-8">
                     <select class="form-control" id="item">
