@@ -41,6 +41,10 @@ public class CustomerService implements AbstractService<Customer, Integer> {
     }
 
     public Customer persist(Customer customer) {
+
+        if ( customer.getId() == null ) {
+            customer.setLiveDead(LiveDead.ACTIVE);
+        }
         //email service
         Customer customer1 = customerDao.save(customer);
         if(customer1.getEmail()!=null){
@@ -61,10 +65,6 @@ public class CustomerService implements AbstractService<Customer, Integer> {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
-
-        if ( customer.getId() == null ) {
-            customer.setLiveDead(LiveDead.ACTIVE);
         }
         return customer1;
     }

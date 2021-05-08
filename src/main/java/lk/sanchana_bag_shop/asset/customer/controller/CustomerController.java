@@ -30,7 +30,7 @@ public  class CustomerController implements AbstractController<Customer, Integer
     private final TwilioMessageService twilioMessageService;
 
     @Autowired
-    public CustomerController(CustomerService customerService, MakeAutoGenerateNumberService makeAutoGenerateNumberService, EmailService emailService, TwilioMessageService twilioMessageService) {
+    public CustomerController(CustomerService customerService, MakeAutoGenerateNumberService makeAutoGenerateNumberService,EmailService emailService,TwilioMessageService twilioMessageService) {
         this.customerService = customerService;
         this.makeAutoGenerateNumberService = makeAutoGenerateNumberService;
         this.emailService = emailService;
@@ -47,8 +47,8 @@ public  class CustomerController implements AbstractController<Customer, Integer
     @GetMapping
     public String findAll(Model model) {
         model.addAttribute("customers", customerService.findAll().stream()
-            .filter(x-> LiveDead.ACTIVE.equals(x.getLiveDead()))
-            .collect(Collectors.toList()));
+                .filter(x-> LiveDead.ACTIVE.equals(x.getLiveDead()))
+                .collect(Collectors.toList()));
         return "customer/customer";
     }
 
@@ -78,19 +78,19 @@ public  class CustomerController implements AbstractController<Customer, Integer
             if (customerService.lastCustomer() == null) {
                 System.out.println("last customer null");
                 //need to generate new one
-                customer.setCode("SSCC"+makeAutoGenerateNumberService.numberAutoGen(null).toString());
+                customer.setCode("SBSC"+makeAutoGenerateNumberService.numberAutoGen(null).toString());
             } else {
 
                 //if there is customer in db need to get that customer's code and increase its value
                 String previousCode = customerService.lastCustomer().getCode().substring(4);
-                customer.setCode("SSCC"+makeAutoGenerateNumberService.numberAutoGen(previousCode).toString());
+                customer.setCode("SBSC"+makeAutoGenerateNumberService.numberAutoGen(previousCode).toString());
             }
             //send welcome message and email
             if (customer.getEmail() != null) {
-                emailService.sendEmail(customer.getEmail(), "Welcome Message", "Welcome to Kmart Super...");
+                emailService.sendEmail(customer.getEmail(), "Welcome Message", "Welcome to Sanchana Bag Shop...");
             }
             if (customer.getMobile() != null) {
-            //    twilioMessageService.sendSMS(customer.getMobile(), "Welcome to Kmart Super");
+                //    twilioMessageService.sendSMS(customer.getMobile(), "Welcome to Sanchana Bag Shop");
             }
         }
 
