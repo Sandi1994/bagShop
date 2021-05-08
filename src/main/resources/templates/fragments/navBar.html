@@ -28,7 +28,7 @@
              data-th-href="@{'/user'}" class="nav-link text-primary" > User Management </a >
           <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER',  'ROLE_ADMIN')"
              data-th-href="@{'/role'}" class="nav-link text-primary" > Role Management </a >
-          <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER')"
+          <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER','ROLE_STOCK_KEEPER')"
              data-th-href="@{'/category'}" class="nav-link text-primary" > Category Management </a >
           <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_STOCK_KEEPER')"
              data-th-href="@{'/item'}" class="nav-link text-primary" > Item Management </a >
@@ -42,15 +42,15 @@
              data-th-href="@{'/purchaseOrder'}" class="nav-link text-primary" > Purchase Order Management </a >
           <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_STOCK_KEEPER')"
              data-th-href="@{'/goodReceivedNote'}" class="nav-link text-primary" > GRN Management </a >
-          <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_STOCK_KEEPER')" data-th-href="@{'/payment'}"
-             class="nav-link text-primary" > Payment Management </a >
+          <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_ACCOUNT_MANAGER')"
+             data-th-href="@{'/payment'}" class="nav-link text-primary" > Payment Management </a >
           <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_ACCOUNT_MANAGER')"
              data-th-href="@{'/invoice'}" class="nav-link text-primary" > Invoice Management </a >
-          <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_CASHIER')"
+          <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_STOCK_KEEPER')"
              data-th-href="@{'/ledger'}" class="nav-link text-primary" > Ledger Management </a >
-          <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_ACCOUNT_MANAGER','ROLE_STOCK_KEEPER')"
+          <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER','ROLE_STOCK_KEEPER')"
              data-th-href="@{'/discountRatio'}" class="nav-link text-primary" > Discount Management </a >
-          <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_STOCK_KEEPER')" data-th-href="@{'/customer'}"
+          <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_CASHIER')" data-th-href="@{'/customer'}"
              class="nav-link text-primary" > Customer Management </a >
           <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_CASHIER')" data-th-href="@{'/exchange'}"
              class="nav-link text-primary" > Exchange Item Management </a >
@@ -67,7 +67,7 @@
              data-th-href="@{'/user/add'}" class="nav-link text-primary" > New User </a >
           <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER',  'ROLE_ADMIN')"
              data-th-href="@{'/role/add'}" class="nav-link text-primary" > New Role </a >
-          <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER')"
+          <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER','ROLE_STOCK_KEEPER')"
              data-th-href="@{'/category/add'}" class="nav-link text-primary" > New Category </a >
           <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_STOCK_KEEPER')"
              data-th-href="@{'/itemColor/add'}" class="nav-link text-primary" > New Item Color </a >
@@ -77,12 +77,12 @@
              data-th-href="@{'/item/add'}" class="nav-link text-primary" > New Item </a >
           <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_STOCK_KEEPER')"
              data-th-href="@{'/supplier/add'}" class="nav-link text-primary" > New Supplier </a >
-          <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_STOCK_KEEPER')"
-             data-th-href="@{'/invoice/add'}" class="nav-link text-primary" > New Invoice </a >
           <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_CASHIER')"
+             data-th-href="@{'/invoice/add'}" class="nav-link text-primary" > New Invoice </a >
+          <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_STOCK_KEEPER')"
              data-th-href="@{'/discountRatio/add'}" class="nav-link text-primary" > New Discount </a >
-          <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_STOCK_KEEPER')" data-th-href="@{'/customer/add'}"
-             class="nav-link text-primary" > New Customer </a >
+          <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_STOCK_KEEPER')"
+             data-th-href="@{'/customer/add'}" class="nav-link text-primary" > New Customer </a >
           <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_CASHIER')" data-th-href="@{'/exchange/add'}"
              class="nav-link text-primary" > Exchange Item </a >
         </div >
