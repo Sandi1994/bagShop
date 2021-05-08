@@ -11,18 +11,25 @@
       <div class="container-fluid  form-Border" >
         <div class="row text-center   " >
           <div class="col" >
-            <a class="btn btn-outline-info" href="/home" >&nbsp; Back To Home
+            <br>
+            <br>
+            <a class="btn btn-dark" href="/home" ><i class="fa fa-home"></i>
+              Home
             </a >
           </div >
 
           <div class="col" >
-            <a href="/employee" class="btn btn-info" >View Employees
+            <br>
+            <br>
+            <a href="/employee" class="btn btn-dark" ><i class="fa fa-eye"></i>View Employees
             </a >
           </div >
         </div >
         <div >
           <div class="col" >
-            <h4 class="text-info text-center" >
+            <br>
+            <br>
+            <h4 class="text-dark text-center" >
               <strong >
                 <p data-th-text="${employeeDetail.title.title} +${' '} +${employeeDetail.name}" ></p >
               </strong >
@@ -30,12 +37,15 @@
           </div >
         </div >
       </div >
+<br>
       <!--details-->
-      <div data-th-fragment="employeeDetailsFragment" class="container-fluid formBorder" >
+      <div data-th-fragment="employeeDetailsFragment" class="container-fluid formBorder" style="background-color: rgba(255, 255, 255, 0.2); color: navy; font-size : 17px;border-radius: 30px; width: 1200px; height: 500px;">
         <div class="col-sm-12 flex-column text-dark" >
           <div class="row" >
             <!--Left Side-->
             <div class="form-group col-md-6 col-sm-6 flex-column" >
+              <br>
+              <br>
               <div class="form-row text-right " >
                 <div class="col-md-4" >
                   <label class="control-label" for="id" >ID :</label >
@@ -126,6 +136,8 @@
             </div >
             <!--Right Side-->
             <div class="form-group col-md-6 col-sm-6 text-right flex-column" >
+              <br>
+              <br>
               <div class="form-row text-right" >
                 <div class="col-md-4" >
                   <label class="control-label" for="address" >Address :</label >
@@ -252,7 +264,7 @@
         </div >
         <div class="form-group col-md-12 col-sm-12 text-center flex-column " >
           <a href="/employee" >
-            <button class="btn btn-outline-secondary" type="button" tabindex="10" >
+            <button class="btn btn-info" type="button" tabindex="10" >
               <i class="fa fa-arrow-circle-left " style="font-size: 20px" ></i >&nbsp; &nbsp;Back
             </button >
           </a >

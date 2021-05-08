@@ -41,8 +41,9 @@
           </div >
         </div >
       </div >
+<br>
       <!--Customers List-->
-      <div class="container-fluid bg-primary text-center" >
+      <div class="container-fluid formborder text-center" >
         <!--Table view-->
         <div class="col" >
           <div class="col" id="customerListPresent" data-th-if="${not #lists.isEmpty(customers)}" >
@@ -60,15 +61,15 @@
               <tbody >
               <tr data-th-each="customer, rowCount : ${customers}" >
                 <th data-th-text="${rowCount.count}" ></th >
-                <th data-th-text="${customer.title.title}+${'. '}+${customer.name}" ></th >
+                <th data-th-text="${customer.title.title}+${'.'}+${customer.name}" ></th >
                 <th data-th-text="${customer.code}" ></th >
                 <th data-th-text="${customer.mobile}" ></th >
                 <th data-th-text="${customer.address}" ></th >
                 <th >
                   <a id="customerView" data-th-href="${'/customer/' + customer.id}" class="btn btn-outline-dark btn-sm" ><i
-                        class="fa fa-folder-open" style="font-size: 15px" ></i >&nbsp;View</a >
+                        class="fa fa-eye" style="font-size: 15px" ></i >&nbsp;View</a >
                   <a id="customerEdit" data-th-href="${'/customer/edit/' + customer.id}"
-                     class="btn btn-success btn-sm" ><i class="fa fa-edit"
+                     class="btn btn-primary btn-sm" ><i class="fa fa-edit"
                                                         style="font-size: 15px" ></i >&nbsp;Edit</a >
                   <a  data-th-if="${!#authorization.expression('hasRole(''ROLE_CASHIER'')')}"
                      data-th-href="${'/customer/delete/' + customer.id}"
@@ -99,6 +100,8 @@
         <!--Save customer-->
         <div class="row" data-th-if="${customerDetail != null}" >
           <div class="col-sm-12" >
+            <br>
+            <br>
             <div class="alert alert-warning alert-dismissible fade show" role="alert" >
               <button type="button" class="close" data-dismiss="alert" aria-label="Close" >
                 <span aria-hidden="true" >&times;</span >

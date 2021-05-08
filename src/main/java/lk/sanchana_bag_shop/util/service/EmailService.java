@@ -38,7 +38,7 @@ public class EmailService {
 
         try {
             mailMessage.setTo(receiverEmail);
-            mailMessage.setFrom("-(Sanchana Bag Shop - Kadawatha - (not reply))");
+            mailMessage.setFrom("-(Sanchana Bag Shop - Nittambuwa - (not reply))");
             mailMessage.setSubject(subject);
             mailMessage.setText(message);
 

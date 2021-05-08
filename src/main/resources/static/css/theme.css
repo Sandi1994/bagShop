@@ -83,6 +83,12 @@ p {
     color: red;
 }
 
+.alert-warning {
+    color: rgb(84, 84, 84);
+    background-color: rgb(141, 171, 233);
+    border-color: rgb(168, 171, 238);
+}
+
 /* ----- Typography ----- */
 #mainWindow {
     font-family: "Poppins", sans-serif;
