@@ -8,11 +8,11 @@
 <body class="sb-nav-fixed" >
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}" ></nav >
 
-<div class="container-fluid">
-    <div class="card mb-4 my-4">
-        <div class="container-fluid my-4">
-            <a aria-controls="hrefCollapse" aria-expanded="false" class="btn btn-primary col-6" data-toggle="collapse"
-               href="#hrefCollapse">Show Purchase Order Detail's - Purchase Order Code :
+<div class="container-fluid" >
+    <div class="card mb-4 my-4" style="background-color: rgba(255, 255, 255, 0.2); color: navy; font-size : 17px;border-radius: 30px; width: 1300px; height: 600px;">
+        <div class="container-fluid my-4" >
+            <a aria-controls="hrefCollapse" aria-expanded="false" class="btn float-right col-5" data-toggle="collapse"
+               href="#hrefCollapse" style="color: antiquewhite; background-color: #2b79ba; border-color: #336796;">Show Purchase Order Detail's - Purchase Order Code :
                 <span data-th-text="${purchaseOrderDetail.code}"></span></a>
         </div>
         <div class="collapse" id="hrefCollapse">
@@ -21,7 +21,7 @@
         </div>
         <!--GRN Table-->
         <div class="card-body">
-            <form data-th-action="${'/goodReceivedNote/received'}" method="POST" data-th-object="${goodReceivedNote}">
+            <form data-th-action="${'/goodReceivedNote/received'}" method="POST" data-th-object="${goodReceivedNote}" >
                 <div class="table-responsive-md">
                     <table class="table table-striped" id="myTable">
                         <thead>
