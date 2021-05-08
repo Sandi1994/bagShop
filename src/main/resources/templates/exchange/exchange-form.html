@@ -36,33 +36,29 @@
                     <td data-th-text="${invoiceLedger.ledger.item.name}" ></td >
                     <td data-th-text="${invoiceLedger.quantity}" ></td >
                     <td data-th-text="${invoiceLedger.sellPrice}" ></td >
-                    <td class="lineTotal" data-th-text="${invoiceLedger.lineTotal}" ></td >
+                    <td >
+                      <span class="lineTotal" data-th-text="${invoiceLedger.lineTotal}" ></span >
+                    </td >
                     <th >
                       <div class="custom-control custom-checkbox custom-control-inline "
                            data-th-each="invoiceLedgerStatus,rowIndex : ${invoiceLedgerStatuses}" >
                         <input class="custom-control-input gender" required
                                data-th-name="${'invoiceLedgers[__${index.index}__].id'}"
                                data-th-value="${invoiceLedgerStatus}"
-                               data-th-id="${'ld'+index.index}+${invoiceLedgerStatus}+${rowIndex}" type="radio"
+                               data-th-id="${rowIndex.count}+${'ld'+index.index}" type="radio"
                                data-th-checked="${invoiceLedgerStatus==invoiceLedger.liveDead}" />
                         <label class="custom-control-label"
-                               data-th-for="${'ld'+index.index}+${invoiceLedgerStatus}+${rowIndex}"
+                               data-th-for="${rowIndex.count}+${'ld'+index.index}"
                                data-th-text="${invoiceLedgerStatus.liveDeath}" > radio
                         </label >
                       </div >
                     </th >
                     <th >
-                      <input type="number" step="1" min="0" data-th-id="${'rc'+index.index}" />
+                      <input type="number" step="1" min="0" data-th-id="${'rc'+index.index}"
+                             class="form-control rcNumber" />
                     </th >
                   </tr >
                   </tbody >
-                  <tfoot >
-                  <tr >
-                    <th colspan="4" class="text-right" ><label for="total" >Total</label ></th >
-                    <th ><p id="total" ></p >
-                    </th >
-                  </tr >
-                  </tfoot >
                 </table >
               </div >
             </div >
@@ -214,16 +210,16 @@
 <div data-th-replace="~{fragments/script :: scriptFragment}" ></div >
 <script >
     $(document).ready(function () {
-        let total = 0;
-        $(".lineTotal").html().forEach(
-            x => {
-                total += parseFloat(x);
-            }
-        )
-        $("#total").val(total);
+        $(".rcNumber").prop('readonly', true).prop('required', false);
     });
-
-
+    $("input[type=radio]").change(function () {
+        let id = $(this).attr('id').slice(3);
+        if ($(this).val() === 'STOP') {
+            $(`#rc${id}`).prop('readonly', false).prop('required', true);
+        } else {
+            $(`#rc${id}`).prop('readonly', true).prop('required', false);
+        }
+    });
 </script >
 </body >
 </html >
