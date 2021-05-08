@@ -151,7 +151,7 @@
               <label class="control-label" for="rop" >Reorder Point :</label >
             </div >
             <div class="col-md-4" >
-              <input id="rop" data-th-field="*{rop}" class="form-control" tabindex="8" type="number" min="1" step="1" required />
+              <input id="rop" data-th-field="*{rop}" class="form-control" tabindex="8" min=1 step="1" type="number" required />
                <span id="ropError" data-th-errors="*{rop}"
                     data-th-if="${#fields.hasErrors('rop')}" class="error" >Error ROP</span >
             </div >

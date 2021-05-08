@@ -49,9 +49,10 @@ let nicRegex = /^([0-9]{9}[|X|V]|[0-9]{12})$/;
 // let nicRegex = /^([0-9]{9}[vV|xX])|^([0-9]{12})$/;
 let mobileRegex = /^([0][7][\d]{8}$)|^([7][\d]{8})$/;
 let landRegex = /^0((11)|(2(1|[3-7]))|(3[1-8])|(4(1|5|7))|(5(1|2|4|5|7))|(6(3|[5-7]))|([8-9]1))([2-4]|5|7|9)[0-9]{6}$/;
-let nameRegex = /^[a-zA-Z .-]{5}[ a-zA-Z.-]+$/;
+let nameRegex = /^[a-zA-Z .-]{4}[ a-zA-Z.-]+$/;
 let numberRegex = /^([eE][hH][sS][\d]+)$/;
 let invoiceNumberRegex = /^[0-9]{10}$/;
+let emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
 
 //Nic - data of birth - start
@@ -301,13 +302,23 @@ $("#invoiceNumber").bind("keyup", function () {
     }
 });
 
+//email validation
+$("#email").bind("keyup", function () {
+    let email = $(this).val();
+    if (emailRegex.test(email)) {
+        backgroundColourChangeGood($(this));
+    } else {
+        backgroundColourChangeBad($(this));
+    }
+});
+
 //colour change function --start
 let backgroundColourChangeGood = function (id) {
-    $(id).css('background-color', '#00FFFF');
+    $(id).css('background-color', '#59be44');
 };
 
 let backgroundColourChangeBad = function (id) {
-    $(id).css('background-color', '#FF00AA');
+    $(id).css('background-color', '#e53a3a');
 };
 
 let backgroundColourChangeNothingToChange = function (id) {
