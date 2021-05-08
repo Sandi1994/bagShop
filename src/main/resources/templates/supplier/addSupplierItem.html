@@ -150,10 +150,10 @@
                           <input class="custom-control-input itemSupplierStatus" required
                                  data-th-name="${'supplierItems[__${index.index}__].itemSupplierStatus'}"
                                  data-th-value="${itemSupplierStatuses}"
-                                 th:id="${index.index}+${itemSupplierStatuses}" type="radio"
-                                 th:checked="${itemSupplierStatuses==supplierItem.itemSupplierStatus}" />
+                                 data-th-id="${index.index}+${itemSupplierStatuses}" type="radio"
+                                 data-th-checked="${itemSupplierStatuses==supplierItem.itemSupplierStatus}" />
                           <label class="custom-control-label"
-                                 th:for="${index.index}+${itemSupplierStatuses}"
+                                 data-th-for="${index.index}+${itemSupplierStatuses}"
                                  data-th-text="${itemSupplierStatuses.itemSupplierStatus}" > radio
                           </label >
                         </div >

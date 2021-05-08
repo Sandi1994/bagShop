@@ -127,6 +127,7 @@ public class SupplierItemController {
     List< SupplierItem > supplierItems = supplier.getSupplierItems();
     for ( SupplierItem supplierItem : supplierItems ) {
       SupplierItem supplierItemOne = new SupplierItem();
+
       if ( supplierItem.getId() != null ) {
         supplierItemOne.setId(supplierItem.getId());
       }
@@ -148,8 +149,8 @@ public class SupplierItemController {
   public PurchaseOrderItemLedger purchaseOrderSupplierItem(@RequestParam( "supplierId" ) Integer supplierId,
                                                            @RequestParam( "itemId" ) Integer itemId) {
     SupplierItem supplierItem = supplierItemService.findBySupplierAndItemItemSupplierStatus(
-        supplierService.findByIdAndItemSupplierStatus(supplierId, ItemSupplierStatus.CURRENTLY_BUYING),
-        itemService.findById(itemId), ItemSupplierStatus.CURRENTLY_BUYING);
+            supplierService.findByIdAndItemSupplierStatus(supplierId, ItemSupplierStatus.CURRENTLY_BUYING),
+            itemService.findById(itemId), ItemSupplierStatus.CURRENTLY_BUYING);
     PurchaseOrderItemLedger purchaseOrderItemLedger = new PurchaseOrderItemLedger();
     /* 1. item ID   2. Item name 3. Rop 4. Price 5. Available Quantity. */
     purchaseOrderItemLedger.setItemId(supplierItem.getItem().getId());
@@ -160,10 +161,10 @@ public class SupplierItemController {
     //comparing to learn comparator
     Comparator< Ledger > ledgerComparator = Comparator.comparing(AuditEntity::getId);
     List< Ledger > ledgers =
-        ledgerDao.findByItem(supplierItem.getItem())
-            .stream()
-            .sorted(ledgerComparator)
-            .collect(Collectors.toList());
+            ledgerDao.findByItem(supplierItem.getItem())
+                    .stream()
+                    .sorted(ledgerComparator)
+                    .collect(Collectors.toList());
 
     if ( ledgers.size() != 0 ) {
       purchaseOrderItemLedger.setAvailableQuantity(ledgers.get(0).getQuantity());
@@ -174,6 +175,5 @@ public class SupplierItemController {
 
     return purchaseOrderItemLedger;
   }
-
 
 }
