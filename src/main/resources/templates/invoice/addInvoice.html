@@ -10,7 +10,7 @@
 <link data-th-href="@{/css/combo-box-search.css}" media="all" rel="stylesheet" type="text/css" />
 <link data-th-href="@{/css/modal.css}" media="all" rel="stylesheet" type="text/css" />
 <div class="container-fluid">
-  <div class="card bg-light m-4">
+  <div class="card m-4" style="background-color: rgba(255, 255, 255, 0.2); color: navy; font-size : 17px;border-radius: 30px; width: 1300px; height: 1000px;">
     <div class="card-body">
       <!--Creates the popup body-->
       <div class="popup-overlay">
@@ -63,6 +63,9 @@
         </div>
       </div>
 
+      <br>
+      <br>
+
       <form action="/invoice" method="post" data-th-object="${invoice}">
         <!--customer list-->
         <div class="form-group row">
@@ -81,7 +84,7 @@
             </select>
           </div>
           <div class="col-4">
-            <a class="btn btn-sm btn-outline-success float-right" href="/customer/add">Add
+            <a class="btn btn-md btn-outline-dark float-right" href="/customer/add">Add
               customer</a>
           </div>
         </div>
@@ -91,7 +94,7 @@
           <div class="col-1">
             <label class="control-label" for="item">Items</label>
           </div>
-          <div class="col-11">
+          <div class="col-7">
             <select id="item" class="form-control form-control-sm" tabindex="9">
               <option value="">Please select</option>
               <option data-th-each="ledger : ${ledgers}"
